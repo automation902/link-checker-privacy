@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PRNEWS Link Checker - Privacy Policy</title>
+<style>
+:root{--bg:#fff;--fg:#17141f;--mut:#5d5870;--line:#e6e3ee;--acc:#e5322d;--code:#f4f2f8}
+@media(prefers-color-scheme:dark){:root{--bg:#13111a;--fg:#ece9f5;--mut:#a29cb8;--line:#2b2738;--acc:#ff5a54;--code:#1e1b29}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:48px 16px 80px}
+h1{font-size:2rem;line-height:1.2;margin:0 0 8px;text-wrap:balance}h2{font-size:1.25rem;margin:36px 0 8px}
+p,li{max-width:65ch}em{color:var(--mut)}a{color:var(--acc)}
+code{background:var(--code);padding:1px 6px;border-radius:6px;font-size:.9em}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.95rem}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--mut);font-weight:600}
+.bar{height:4px;background:var(--acc);border-radius:99px;width:56px;margin-bottom:20px}
+</style></head><body><main><div class="bar"></div>
+<h1>PRNEWS Link Checker - Privacy Policy</h1>
+<p><em>Last updated: 6 October 2026</em></p>
+<p>PRNEWS Link Checker ("the extension") is a browser extension operated by PRNEWS OÜ, Laeva tn 1, Kesklinna linnaosa, 10150 Tallinn, Estonia ("we"). It shows whether a website is available in the PRNEWS.IO catalog and at what price. This policy explains what the extension reads, what it sends, what it stores and how you can delete it.</p>
+<h2>What the extension reads</h2>
+<ul><li><strong>The current tab's domain, only when you click the extension icon.</strong> The extension reduces the address to its registrable domain (for example <code>example.com</code>).</li><li><strong>Domains of links on Google search result pages and on Ahrefs report pages</strong>, only on those pages, only for results/rows visible on screen, and only to show the "In catalog" / "Not in catalog" badges.</li></ul>
+<p>The extension does not read your search queries, page text, form entries, cookies, passwords, browsing history or any page other than the ones listed above.</p>
+<h2>What is sent, and where</h2>
+<p>All requests go to one service, the PRNEWS.IO catalog API at <code>us-central1-prnews-io.cloudfunctions.net</code>.</p>
+<div class="tw"><table><thead><tr><th>When</th><th>What is sent</th></tr></thead><tbody><tr><td>You open the popup on a website</td><td>That website's domain</td></tr><tr><td>A Google results page or an Ahrefs report page is open (and the badge setting is on)</td><td>The domains of the visible results or table rows, in batches</td></tr><tr><td>The extension needs the catalog link</td><td>An anonymous configuration request (no personal data)</td></tr><tr><td><strong>You press Submit on the "Add to catalog?" form</strong></td><td>The domain, <strong>the name and the email address you typed</strong></td></tr></tbody></table></div>
+<p>Like any web request, these requests reveal your IP address and browser identifier to the server operator. Server logs are used only to operate and protect the service and are kept no longer than necessary for that purpose.</p>
+<p>The name and email from the form are used only to contact you about the suggested website. We keep a suggestion until we have reviewed it and answered, and delete it on request.</p>
+<p>We do not sell your data, we do not share it with advertisers or data brokers, we use no analytics, advertising or tracking SDKs, and the extension loads and runs no remote code.</p>
+<h2>What is stored on your device</h2>
+<p>Stored in the browser (<code>chrome.storage</code>) and never uploaded:</p>
+<ul><li>your settings (tooltip mode, badges on/off per site type, keep-history switch);</li><li>the name and email you entered in the form, remembered after the first successful submission so you do not have to retype them;</li><li>your favorites (domains you starred, with the last known status and price);</li><li>your history of checks you triggered yourself: opening the popup on a site, clicking a badge, starring a site (max 200 domains, newest first). Rows that are merely badged on Google/Ahrefs pages are <strong>not</strong> recorded;</li><li>a short-lived (10 minutes) cache of catalog answers.</li></ul>
+<h2>Your choices and how to delete data</h2>
+<p>In the extension popup, <strong>Settings</strong>:</p>
+<ul><li>turn off <strong>Keep history</strong> to stop recording history;</li><li><strong>Clear saved name &amp; email</strong> removes the remembered contact details;</li><li><strong>Clear all data</strong> removes history, favorites, contact details and settings;</li><li>turn off badges for Google or Ahrefs separately.</li></ul>
+<p>History can also be cleared on the History tab, and favorites removed one by one. Uninstalling the extension deletes all local data. To ask us to delete a suggestion you submitted (name, email, domain), write to the contact address below.</p>
+<h2>Children</h2>
+<p>The extension is not directed at children under 16.</p>
+<h2>Changes</h2>
+<p>If this policy changes in a way that affects what data is collected, we will update the date above and note the change in the extension's release notes.</p>
+<h2>Contact</h2>
+<p>automation@prnews.io</p>
+</main></body></html>
