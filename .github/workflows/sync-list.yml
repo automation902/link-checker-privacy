@@ -1,0 +1,38 @@
+name: Sync list
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch and validate
+        env:
+          SRC: ${{ secrets.LIST_SOURCE_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "$SRC" ]; then echo "no source configured"; exit 0; fi
+          curl -fsS --max-time 30 "$SRC" -o new.json
+          python3 - <<'PY'
+          import json
+          d = json.load(open('new.json'))
+          assert isinstance(d, dict)
+          assert isinstance(d.get('domains'), list) and len(d['domains']) >= 20
+          assert all(isinstance(x, str) for x in d['domains'])
+          assert isinstance(d.get('labels'), list)
+          assert isinstance(d.get('version'), str)
+          PY
+      - name: Commit if changed
+        run: |
+          if [ ! -f new.json ]; then echo "nothing to do"; exit 0; fi
+          if cmp -s new.json list.json; then echo "unchanged"; exit 0; fi
+          mv new.json list.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add list.json
+          git commit -m "Update list"
+          git push
